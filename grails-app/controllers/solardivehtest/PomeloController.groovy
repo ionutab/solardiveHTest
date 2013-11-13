@@ -35,7 +35,7 @@ class PomeloController {
 
         if(pomeloInstance.validate()){
             pomeloInstance.save flush:true
-            pomeloInstance.foo()
+            pomeloInstance.fooSave()
         }
 
         request.withFormat {

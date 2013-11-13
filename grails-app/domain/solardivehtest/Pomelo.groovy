@@ -15,7 +15,6 @@ class Pomelo implements Tangerine {
 
     def beforeUpdate(){
         System.out.println("3333333333")
-        this.checkChanges()
     }
 
     def afterInsert(){
@@ -24,10 +23,14 @@ class Pomelo implements Tangerine {
         System.out.println("Name: " + this.name)
     }
 
-    void foo() {
+    void fooSave() {
         def history = new PomeloHistory()
         history.pomelo = this
         history.history.details = this.name
         historyMaker.insertHistory(history)
+    }
+
+    void fooUpdate() {
+
     }
 }

@@ -36,7 +36,7 @@ class MandarineController {
         }
 
         mandarineInstance.save flush:true
-        mandarineInstance.foo()
+        mandarineInstance.fooSave()
         request.withFormat {
             form {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'mandarineInstance.label', default: 'Mandarine'), mandarineInstance.id])

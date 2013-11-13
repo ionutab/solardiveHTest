@@ -11,6 +11,8 @@ public interface Tangerine extends GroovyObject {
 
     static historyMaker = new HistoryMaker()
 
-    public void foo()
+    public void fooSave()
+
+    public void fooUpdate()
 
 }

@@ -10,7 +10,6 @@ public class HistoryMaker {
 
     void insertHistory(TangerineHistory sss){
         System.out.println("FUCKOFF " + sss.getClass().getName())
-
         sss.save()
     }
 
