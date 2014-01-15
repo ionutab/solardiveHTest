@@ -18,3 +18,10 @@
 	<g:textField name="trail" value="${lemonInstance?.trail}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: lemonInstance, field: 'pomelo', 'error')} ">
+    <label for="trail">
+        <g:message code="lemon.pomelo.name.label" default="Pomelo Name" />
+
+    </label>
+    <g:textField name="pomelo.name" value="${lemonInstance?.pomelo?.name}"/>
+</div>

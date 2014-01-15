@@ -23,8 +23,17 @@ class LemonController {
         respond new Lemon(params)
     }
 
-    @Transactional
-    def save(Lemon lemonInstance) {
+    def save() {
+
+        Lemon lemonInstance = new Lemon(params)
+
+        Pomelo pomeloInstance = new Pomelo()
+
+        log.info("Lemon null " + (lemonInstance == null) )
+        System.out.println("Lemon null " + (lemonInstance == null) )
+        System.out.println("Lemon pomelo null " + (lemonInstance.pomelo == null) )
+        System.out.println("params pomelo " + (params["pomelo"] == null) )
+
         if (lemonInstance == null) {
             notFound()
             return
@@ -40,7 +49,8 @@ class LemonController {
         request.withFormat {
             form {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'lemonInstance.label', default: 'Lemon'), lemonInstance.id])
-                redirect lemonInstance
+//                redirect lemonInstance
+                render(view: "create", model: [lemonInstance: lemonInstance])
             }
             '*' { respond lemonInstance, [status: CREATED] }
         }
